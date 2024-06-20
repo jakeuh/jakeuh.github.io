@@ -1,0 +1,56 @@
+     <!doctype html>
+<!-- 
+    Name: Jake Messinger
+    File: hw4v2.html
+    Date Created: 2023-05-01
+    Date Updated: 2023-05-01
+    Purpose: MIS 3371 Homework 4 v1.. iFrames, protecting areas and cookies.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Jake's Sample Homework 4</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header" class="header"> 
+            <table width=100%>
+                <tr>
+                    <td><img id="logo" src="lcrvlogo.png" alt="Lake Conroe Park & RV"></td>
+                    <td valign="bottom" align="right">Today's date: <span id="today"></span></td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <iframe src="hw4v2-body.html" style="border:2px solid red;height:800px;width:100%"; title="hw4v2-body"></iframe>
+
+<!-- Load external JavaScript -->
+<script src="script.js"></script>
+        
+ <script>
+    const d = new Date();
+    let text = d.toLocaleDateString();
+    document.getElementById("today").innerHTML = text;
+    
+</script>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+var header2 = document.getElementById("header");
+var sticky = header2.offsetTop;
+
+function scrollFunction() {
+  if (window.pageYOffset > sticky) {
+    header2.classList.add("sticky");
+  } else {
+    header2.classList.remove("sticky");
+  }
+}
+</script>
+ <iframe src="footer.html" style="width:100%"></iframe>
+</body>
+
+</html>

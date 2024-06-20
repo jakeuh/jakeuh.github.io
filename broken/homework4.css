@@ -1,0 +1,107 @@
+  body 
+{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.logo-container 
+{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.logo 
+{
+    max-width: 100%;
+    height: auto;
+}
+.white-box 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    width: 700px; 
+    height: 888px; 
+    background-color: white;
+    opacity: 1; 
+    border: 2px solid #ffffff; 
+    border-radius: 10px;
+}
+#datetime
+{
+    text-align: right;
+    font-size: 1.0em;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+#createAccount
+{
+    text-align: center;
+    font-size: 1.2em;
+    color: black;
+    position: absolute;
+    right: 235px;
+    margin-bottom: 20px;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+form 
+{
+    margin: 50px auto;
+    max-width: 1000px;
+    padding: 0px -2px;
+    background: #ffffff;
+    border-radius: 2px;
+}
+tr td 
+{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+tr td input#midinitial 
+{
+    width: 25px;
+}
+tr td input#phone,#member 
+{
+    width: 80px;
+}
+tr td input#zipcode 
+{
+    width: 50px;
+}
+.error 
+{
+    color: red;
+    font-size: 0.8em;
+}
+#footer 
+{
+    position: fixed;
+    bottom: 0;
+    height: 85px;
+}
+//Page content 
+.content 
+{
+    padding: 16px;
+}
+// The sticky class is added to the footer with JS when it reaches its scroll position /
+.sticky 
+{
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+//Add some top padding to the page content to prevent sudden quick movement 
+{
+    padding-top: 102px;
+}
+       

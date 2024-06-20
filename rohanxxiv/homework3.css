@@ -1,0 +1,50 @@
+  /*
+Name: Rohan Kalappa
+File: homework3.css
+Date Created: 2023-04-14
+Date Updated: 2023-04-18
+Purpose: Style Sheet for MIS 7375 HW3
+*/
+body{
+    background-color: lightblue;
+}
+h1{
+    text-align: right;
+    font-family: Arial, impact, times new roman;
+    font-weight: normal;
+    color: rgb(95, 39, 39);
+}
+table.form, tr.form, td.form {
+    width: 65%;
+    font-family: Times New Roman, Georgia, Cambria;
+    background-color: burlywood;
+    padding: 10px;
+    border-spacing: 10px;
+    color: white;
+}
+table.output, tr.output, td.output {
+  width: 70%;
+  opacity: 0.9;
+  font-family: Times New Roman, Georgia, Cambria;
+  background-color:rgb(185, 24, 77);
+  padding: 2px;
+  border-spacing: 2px;
+  color:rgb(222, 243, 245);
+}
+td.outputdata {
+  width: 70%;
+  opacity: 0.9;
+  font-family: Times New Roman, Georgia, Cambria;
+  background-color:white;
+  padding: 2px;
+  border-spacing: 2px;
+  color:black;
+}
+.textsize1 
+{
+    width:10px
+}
+.textsize5 
+{
+    width:40px
+}

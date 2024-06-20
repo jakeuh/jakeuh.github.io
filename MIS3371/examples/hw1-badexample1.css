@@ -1,0 +1,144 @@
+/* Reset default margin, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  background: rgba(18, 18, 18, 0.3) url("background.jpeg") no-repeat center
+    center/cover;
+  background-blend-mode: darken;
+  font-family: "Poppins", sans-serif;
+  height: 100vh; /* Adjusted to full viewport height */
+  color: white;
+}
+
+/* Header styles */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+header p {
+  display: flex;
+  justify-content: end;
+}
+
+/* Navigation styles */
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav .logo {
+  border-radius: 50px;
+  width: 80px;
+}
+.logo-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-text p {
+  margin-top: 60px;
+  margin-right: 25rem;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: #74746e;
+}
+
+/* Form section styles */
+
+/* Form styles */
+form {
+  width: 70%;
+  margin: 0 auto; /* Center the form horizontally */
+  opacity: 0.9; /* Reduced opacity */
+  color: #def3f5; /* Adjusted text color */
+  line-height: 2rem;
+}
+
+form table {
+  width: 100%;
+}
+
+form table th {
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+form table td {
+  padding: 10px;
+}
+.submit-button {
+  display: flex;
+  align-items: center;
+}
+
+.submit-button button {
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.invalid {
+  border: 2px solid red;
+}
+
+/* Additional styles */
+h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 17px;
+}
+.form-section {
+  padding: 0 0 50px 50px;
+  /* backdrop-filter: blur(15px); */
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #231709;
+  height: 55px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+  background: #74746e;
+  height: fit-content;
+  align-items: center;
+  padding: 5px;
+
+}

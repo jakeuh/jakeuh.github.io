@@ -1,0 +1,93 @@
+/* table,
+td,
+tr {
+border: solid 1px;
+} */
+
+body {
+    margin: 0;
+    background-color: hsl(209, 79%, 57%);
+    font-size: 20px;
+}
+
+img{
+    /* border: solid 1px; */
+    margin-left: 0; /* Adjusted to move the logo all the way to the left */
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(11, 11,11);
+    padding-top: 20px;
+    padding-right: 20px;
+    margin-top: 0px;
+    text-align: center; 
+    /* border: solid 1px; */
+}
+
+.td1 {
+    text-align: right;
+}
+
+/* #logo {
+    padding-left: 25px;
+    margin-bottom: 0px;
+ } */  
+
+ .format {
+    background-color: rgb(244, 248, 247);
+    width: 600px;
+    padding: 30px;
+    border-radius: 30px;
+ }
+
+ #logo { 
+    float: left;
+    padding-left: 0px;
+}
+
+.error{
+    color: red;
+    font-size: 11px;
+}
+
+.pwd-message{
+    position: relative;
+    top: -130px;
+    left: 200px;
+    background: transparent;
+    width: 160px;
+    font-size: 12px;
+
+    border: 1px solid;
+
+}
+
+#review {
+    margin-top: 5px;
+}
+
+table.output, 
+tr.output, 
+td.output{
+    width: 500px;
+    background-color: rgb(0, 81, 255);
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 30px;
+    color: black;
+}
+
+td.outputdata{
+    width: 500px;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-spacing: 2px;
+    color: black;    
+}
+
+
+
+
+/* header {
+    background-image: url(https://images/rawpixel.com/image_social_landscape/
