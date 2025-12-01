@@ -1,0 +1,128 @@
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#banner {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.header-row td {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 2px solid #ccc;
+    margin-top: 10px;
+}
+
+label.form-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="tel"], select, textarea {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Review Panel Styles */
+#reviewPanel {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #e9f0ff;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+}
+
+#reviewTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#reviewTable th, #reviewTable td {
+    padding: 8px 12px;
+    border-bottom: 1px dotted #ccc;
+    text-align: left;
+    vertical-align: top;
+}
+
+#reviewTable th {
+    background-color: #d1e2ff;
+    color: #333;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.action-buttons input {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#review-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+#submit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Slider value display */
+.slider-container {
+    display: flex;
+    align-items: center;
+}
+
+.slider-container input[type="range"] {
+    width: 70%;
+    margin-right: 15px;
+}
+
+.slider-display {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* In style.css */
+.inline-error {
+    color: grey;
+    font-size: 0.85em;
+    font-weight: bold;
+    display: block; /* Ensures it takes up its own line */
+    min-height: 1.2em; /* Prevents layout shift when it appears */
+}
