@@ -1,1 +1,560 @@
 
+  <!doctype html>
+<!--
+    Name: JR's Patient intake form
+    Date created: September 22, 2025
+    Date modified: December 10th, 2025
+    Copied and Uploaded by Jake to Git Hub: 2026-01-06
+    Version: 5
+    Description: Transaction Processing, Homework 5. Patient intake form. EXTRA CREDIT. 
+    added toggle switches and responsive code for caps lock detection. also implemented 
+    the collapsable pages, and form progress bar. 
+--> 
+
+<html lang="en"> 
+
+<head> 
+    <link rel="stylesheet" href="ExtraCredit.css"> <!-- link to my css file-->
+    <title> The JR Medical Group </title>
+</head> 
+
+<body> <!--start of body--> 
+
+<div class="scroll-progress"></div> 
+
+<center> 
+    <span id="welcome1"></span>
+    <span id="welcome2"></span>
+</center> 
+
+<center> <!-- added toggle slider--> 
+    <span id="welcome1"></span>
+    <span id="welcome2"></span>
+    <div id="new-user-option" style="display:none; margin: 10px 0;"> 
+        <label>
+            <div class="toggle-container"> 
+                <label class="toggle-switch"> 
+                    <input type="checkbox" id="not-me-checkbox"> 
+                    <span class="toggle-slider"></span> 
+                </label> 
+                <label for="not-me-checkbox"> 
+                    Not <span id="stored-name"></span>? Click here to start as a new user.
+                </label> 
+            </div>
+        </label>
+    </div>
+</center> 
+
+    <header>
+        <table width="100%"> 
+            <tr> 
+                <td valign="top" align="left" width="20%">
+                    <div class="image">
+                        <img align="center" src="Medical-Logo.png" alt="Medical logo" width="70px" id="logo"/>
+                    </div>
+                </td>
+                <td>
+                    <h2>The JR Medical Group</h2> 
+                </td>
+                <td valign="bottom" align="right" width="20%"> 
+                    <p>Today is: <span id="today"></span></p>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <hr>
+
+<!--added the form progress bar--> 
+    <div class="form-progress-container"> 
+        <div class="form-progress-bar"> 
+            <div class="form-progress-fill">0%</div> 
+        </div> 
+        <div class="form-progress-text">0 of 0 required fields completed</div> 
+    </div> 
+
+<!--added a collapsable sections--> 
+    <center>
+    <div class="help-section" style="max-width: 800px; margin: 20px auto;">
+        <div class="help-header"> 
+            <h3>Form Help & Instructions</h3> 
+            <span class="help-toggle"></span> 
+        </div> 
+        <div class="help-content"> 
+            <h4>Form tips:</h4>
+            <ul>
+                <li>Watch the progress bar at the top to track completion</li>
+                <li>Check for Caps Lock warnings on password fields</li>
+                <li>All required fields must be filled before submission</li>
+            </ul>
+        </div>
+    </div> 
+
+<!-- added content for the collapsable pages--> 
+    <div class="help-section" style="max-width: 800px; margin:20px auto;">
+        <div class="help-header">
+            <h3>About this form</h3>
+            <span class="help-toggle"></span>
+        </div>
+        <div class="help-content"> 
+            <p>Please complete all required fields per medical intake form instructions. This form was created to better get know you prior to your appointment.</p>
+            <p>Your information is protected and will be securely stored. We use industry-standard encryption and ensure HIPPA regulations are met.</p>
+            <p>If you check "Remember Me", your basic information will be saved for your next visit.</p>
+            <p>We look forward to meeting you!</p> 
+        </div>
+    </div>
+    </center>
+
+    <form id="signup" action="ExtraCredit-ThankYou.html"><!--will take you to my thankyou form-->
+        <div class ="format"> 
+            <table> 
+
+    <tr>
+        <th colspan="4">Create Account</th> <!--beginning of create account section--> 
+    </tr>
+
+    <tr>
+        <td><label for="fname">First Name:</label></td>
+        <td>
+            <input 
+            type="text"
+            name="fname"
+            id="fname"
+            minlength="1"
+            maxlength="30"
+            required
+            title="Letter, apostrophes, and dashes only"
+            pattern="[a-zA-Z'-]{1,30}"
+            onblur="validateFname()" 
+            placeholder="Julian"
+            /> 
+            <span class="error" id="fname-error"></span> 
+        </td>
+    </tr>
+
+    <tr> 
+        <td><label for="mini">Middle Initial:</label></td>
+        <td>
+            <input 
+            type="text"
+            name="mini"
+            id="mini"
+            maxlength="1"
+            title="Letters only"
+            pattern="[a-zA-Z'-]{0,1}" 
+            onblur="validateMini()" 
+            placeholder="R"
+            />
+            <span class="error" id="mini-error"></span>
+        </td> 
+    </tr> 
+
+    <tr>
+        <td><label for="lname">Last Name:</label></td>
+        <td>
+            <input 
+            type="text"
+            name="lname"
+            id="lname"
+            minlength="1"
+            maxlength="30"
+            required
+            title="Letter, apostrophes, and dashes only"
+            pattern="[a-zA-Z'-]{1,30}" 
+            onblur="validateLname()" 
+            placeholder="Rodriguez"
+            />
+            <span class="error" id="lname-error"></span>
+        </td> 
+    </tr> 
+
+    <tr>
+        <td><label for="pgender">Gender:</label></td> <!--radio buttons 1/3--> 
+        <td>
+            <input type="radio" id="g1" name="pgender" value="Male"> Male
+            <input type="radio" id="g2" name="pgender" value="Female"> Female
+            <input type="radio" id="g3" name="pgender" value="Other"> Other 
+        </td>
+    </tr> 
+
+    <tr>
+        <td><label for="DOB">Date of Birth:</label></td>
+        <td>
+            <input 
+            type="date"
+            id="DOB"
+            name="DOB"
+            onblur="validateDOB()" 
+            maxlength="8" 
+            required
+            placeholder="00/00/2003"
+            title="Select your date of birth" 
+            />
+            <span class ="error" id="dob-error"></span> 
+        </td>
+    </tr>
+
+    <tr>
+        <td><label for="email">Email Address:</label></td>
+        <td>
+            <input 
+            type="email"
+            id="email"
+            maxlength="40"
+            name="email"
+            required
+            placeholder="name@domain.tld"
+            onblur="validateEmail()" 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+            title="Enter a valid email address (e.g., user@example.com)" 
+            />
+            <span class="error" id="email-error"></span> 
+        </td>
+    </tr>
+
+    <tr>
+        <td><label for="ssn">Social Security Number:</label></td>
+        <td>
+            <input 
+            type="password"
+            minlength="9"
+            maxlength="11"
+            id="ssn"
+            name="ssn"
+            required
+            title="Numbers only"
+            placeholder="123-45-6789"
+            onblur="validateSsn()" 
+            />
+            <span class="error" id="ssn-error"></span> 
+        </td>
+    </tr>
+
+    <tr>
+        <td><label for="phone">Phone Number:</label></td>
+        <td>
+            <input 
+            type="text"
+            name="phone"
+            id="phone"
+            maxlength="15"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+            required
+            title="Please enter your phone number"
+            placeholder="(000) 000-0000" 
+            onblur="validatePhone()" 
+            />
+            <span class="error" id="phone-error"></span> 
+        </td> 
+    </tr>
+
+    <tr>
+        <th colspan="4"><hr></th> <!-- creates line separator to ditinguish section 1 and 2--> 
+    </tr>
+    <tr>
+        <th colspan="4">Patient's Contact Information</th>
+    </tr>
+
+    <tr>
+        <td><label for="Zipcode">Zip Code:</label></td>
+        <td>
+            <input
+            type="text"
+            name="Zipcode"
+            id="Zipcode"
+            minlength="5"
+            maxlength="10"
+            required
+            title="Enter 5-digit ZIP Code"
+            placeholder="07070"
+            pattern="^\d{5}$"
+            onblur="lookupZipCode()"
+            /> 
+            <span class="error" id="Zipcode-error"></span> 
+            <span id="zip-loading" style="color: #4caf50; font-size: 12px; display: none;">Looking up...</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td><label for="City">City:</label></td>
+        <td>
+            <input 
+            type="text"
+            name="City"
+            id="City"
+            maxlength="30"
+            required
+            readonly
+            placeholder="Will auto-fill from ZIP"
+            title="Auto-filled based on ZIP code"
+            style="background-color: #f0f0f0; cursor: not-allowed;"
+            />
+            <span class="error" id="city-error"></span>
+        </td>
+    </tr>
+
+    <tr>
+        <td><label for="state">State:</label></td>
+        <td>
+            <input 
+            type="text"
+            name="state"
+            id="state"
+            maxlength="2"
+            required
+            readonly
+            placeholder="Will auto-fill from ZIP"
+            title="Auto-filled based on ZIP code"
+            style="background-color: #f0f0f0; cursor: not-allowed;"
+            />
+            <span class="error" id="state-error"></span>
+        </td>
+    </tr>
+
+    <tr>
+        <td><label for="address1">Address Line 1:</label></td>
+        <td>
+            <input 
+            type="text"
+            name="address1"
+            id="address1"
+            minlength="2"
+            maxlength="30"
+            required
+            title="Please enter your address"
+            placeholder="Address Line 1"
+            onblur="validateAddress1()" 
+            />
+            <span class="error" id="address1-error"></span> 
+        </td>
+    </tr>
+    
+    <tr>
+        <td><label for="address2">Address Line 2:</label></td>
+        <td>
+            <input 
+            type="text"
+            name="address2"
+            id="address2"
+            maxlength="30"
+            placeholder="Address Line 2"
+            title="Please enter if applicable"
+            onblur="validateAddress2()" 
+            />
+            <span class="error" id="address2-error"></span> 
+        </td>
+    </tr>
+
+    <tr>
+        <th colspan="4"><hr></th> <!--creates line separator to ditinguish section 2 and 3--> 
+    </tr>
+    <tr>
+        <th colspan="4">Patient's History</th>
+    </tr>
+
+    <tr> <!--radio buttons 2/3 // updated to toggle switches instead of checkboxes--> 
+        <td><label>Do you have any of the following?:</label></td>
+        <td>
+        <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" name="history-fever" id="history-fever" value="Fever">
+                <span class="toggle-slider"></span>
+            </label>
+            <label for="history-fever">Fever</label>
+        </div>
+
+        <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" name="history-coldsweats" id="history-coldsweats" value="Cold Sweats">
+                <span class="toggle-slider"></span>
+            </label>
+            <label for="history-coldsweats">Cold Sweats</label>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <div class="toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" name="history-vomitting" id="history-vomitting" value="Vomitting">
+                    <span class="toggle-slider"></span>
+                </label>
+                <label for="history-vomitting">Vomitting</label>
+            </div>
+
+            <div class="toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" name="history-diarrhea" id="history-diarrhea" value="Diarrhea">
+                    <span class="toggle-slider"></span>
+                </label>
+                <label for="history-diarrhea">Diarrhea</label>
+            </div>
+        </div>
+        
+        <div>
+            <div class="toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" name="history-covid19" id="history-covid19" value="Covid-19">
+                    <span class="toggle-slider"></span>
+                </label>
+                <label for="history-covid19">Covid-19</label>
+            </div>
+        </div>
+    </td>
+</tr>
+
+    <tr> <!--radio buttons 3/3--> 
+        <td><label for="history">Have you been vaccinated?:</label></td>
+        <td>
+            <input type="radio" id="vaccine-yes" name="vaccine" value="Y">Yes
+            <input type="radio" id="vaccine-no" name="vaccine" value="N">No
+        </td>
+    </tr>
+
+    <tr>
+        <td><label for="notes">Additional Notes:</label></td>
+        <td>
+            <textarea id="notes" name="notes" rows="4" cols="35" placeholder="Please describe your current symptoms and concerns here..."></textarea>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td1"><label for="range">How are you feeling today?<br/>(1: terrible, 10: lovely)</label></td>
+        <td>
+            <input
+            type="range"
+            name="range"
+            id="range"
+            min="1"
+            max="10"
+            value="0"
+            />
+            <span id="range-slider"></span>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td1"><label for="uid">User ID:</label></td>
+        <td>
+            <input
+            type="text"
+            name="uid"
+            id="uid"
+            maxlength="20"
+            required
+            title="Please enter a user ID"
+            placeholder="Your user ID"
+            onblur="validateUid()" 
+            />
+            <span class="error" id="uid-error"></span> 
+        </td>
+    </tr>
+
+<!-- added the caps lock features the passsword sections--> 
+    <tr>
+        <td><label for="pword">Password:</label></td>
+        <td>
+            <input type="password"
+            name="pword"
+            id="pword"
+            minlength="8"
+            required
+            onblur="validatePword()" 
+            oninput="validatePword()" 
+            onfocus="validatePword()"
+            title="Password must be at least 8 characters with uppercase, lowercase, number, and a special character"
+            /> 
+            <div class="caps-warning">Caps Lock is ON</div> 
+            <span class="error" id="pword-error"></span> 
+        </td>
+    </tr>
+
+    <tr>
+        <td><label for="pword2">Re-enter Password:</label></td>
+        <td>
+            <input 
+            type="password"
+            name="pword2"
+            id="pword2"
+            minlength="8"
+            required
+            onblur="confirmPword()"
+            oninput="confirmPword()"
+            onfocus="confirmPword()" 
+            title="Please re-enter your password"
+            />
+            <div class="caps-warning">Caps Lock is ON</div> 
+            <span class="error" id="pword2-error"></span> 
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="4" style="text-align: center;">
+            <label for="remember-me">Remember Me:</label> 
+            <input
+                type="checkbox"
+                id="remember-me"
+                name="remember-me"
+                checked
+            /> 
+        </td> 
+    </tr> 
+
+<!-- some edits made here for EXTRA CREDIT-required 1--> 
+    <tr>
+        <td colspan="4">  
+            <center>
+                <input 
+                    type="button"
+                    name="check-data"
+                    id="check-data"
+                    value="Submit"
+                    onclick="checkAndDisplayData()"
+                />
+                <input type="reset" name="reset"> 
+            </center> 
+                <div class="pword-message"> 
+                    <span id="msg1"></span><br/> 
+                    <span id="msg2"></span><br/> 
+                    <span id="msg3"></span><br/>
+                    <span id="msg4"></span><br/>
+                </div> 
+        </td>
+    </tr>
+        </table> 
+    </div> 
+</form> 
+
+<!-- more edits for extra credit - required 1--> 
+<div id="review-modal" class="modal"> 
+    <div class="modal-content">
+        <div class="modal-header"> 
+            <h2>Review your information</h2> 
+        </div>
+        <div class="modal-body" id="modal-body">
+        </div>
+        <div class="modal-footer">
+            <button id="modal-go-back-btn" onclick="closeModal()" class="modal-btn go-back-btn">
+                Go Back
+            </button>
+            <button id="modal-submit-btn" onclick="submitForm()" class="modal-btn submit-btn">
+                Submit
+            </button>
+        </div>
+    </div>
+</div> 
+
+<!--iframe--> 
+<div class="iframe-container">
+    <iframe class="frame" src="https://www.mchllp.com/" frameborder="_"></iframe>
+</div>
+
+<!--end of table form--> 
+
+<!--beginning of footer--> 
+<div class="site-footer">
+    <p>&#169; 2025 The JR Medical Group | <a href="https://www.redbull.com/us-en">Contact Us!</a></p> <!--this will take you to my ContactUs page!-->
+    <p>PO Box #12345, Houston, TX 77777</p>
+</div>
+
+<script src="ExtraCredit.js"></script> <!--This will take you to my JavaScript file--> 
+
+</body> <!--end of body--> 
+</html> <!--end of file--> 
