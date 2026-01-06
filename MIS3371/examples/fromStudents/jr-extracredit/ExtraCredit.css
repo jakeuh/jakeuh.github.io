@@ -1,0 +1,622 @@
+/*
+    Name: Julian Rodriguez's patient intake form style file
+    Date created: September 22, 2025
+    Date modified: December 10th, 2025
+    Version: 5
+    Description: Transaction Processing, Homework 5 css file. EXTRA CREDIT. 
+     styling for new features. 
+*/ 
+
+/*sets color for header*/ 
+header {
+    width: 100%; 
+    background-color: rgba(223, 121, 32, 0.888); 
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) 
+}
+
+/* scroll progress indicator - css for addition 1*/ 
+.scroll-progress {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 0%; 
+    height: 4px; 
+    background: linear-gradient(90deg, #00ff66bf, #00cc00); 
+    z-index: 10001; 
+    transition: width 0.1s ease; 
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.5); 
+}
+
+/* form progress bar - css for addition 2* - tried to place adjacent to the iframe!*/ 
+.form-progress-container{
+    position: fixed; 
+    top: 250px; 
+    left: 20px; 
+    transform: none; 
+    width: 250px; 
+    max-width: 250px; 
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 15px 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    z-index: 999; 
+}
+
+.form-progress-bar{
+    width: 100%; 
+    height: 20px; 
+    background: rgba(200, 200, 200, 0.5); 
+    border-radius: 10px; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.form-progress-fill{
+    height: 100%; 
+    background: linear-gradient(90deg, #4caf50, #8bc34a); 
+    border-radius: 10px; 
+    transition: width 0.3s ease; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    font-weight: bold; 
+    font-size: 12px; 
+}
+
+.form-progress-text{
+    text-align: center; 
+    margin-top: 5px; 
+    font-size: 14px; 
+    color: #333; 
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
+/* welcome1, welcome2*/
+#welcome1, #welcome2{
+    display: block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem; 
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 15px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px; 
+}
+
+#welcome1 {
+    margin-top: 20px
+}
+
+#welcome2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+/*i frame css*/ 
+.iframe-container {
+    position: fixed;
+    right: 20px; 
+    top: 250px;
+    bottom: 80px; 
+    width: 300px; 
+    height: 400px;
+    border: 2px solid rgba(223, 121, 32, 0.888); 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    background-color: rgba(255, 255, 255, 0.9); 
+    z-index: 100; 
+}
+
+.iframe-container iframe, .frame {
+    width: 100%; 
+    height: 100%; 
+    border: none;
+    border-radius: 8px; 
+}
+
+/*sets color for body*/ 
+body{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    background-color: rgba(0, 30, 255, 0.708); 
+    margin: 0; 
+    min-height: 100vh; 
+}
+
+form{
+    flex-grow: 1; 
+    padding-bottom: 80px; 
+    padding-top: 30px; 
+}
+
+/*font style, weight, and size for headers 1 and 2*/ 
+h1, h2 {
+    text-align: center; 
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-weight: bold; 
+    flex-grow: 1; 
+}
+
+/*font style, weight, and size for headers main text*/ 
+main{
+    text-align: center; 
+    font-family: sans-serif; 
+    font-weight: normal;
+    flex-grow: 1; 
+}
+
+/*image alignment*/ 
+.image {
+    text-align: left; 
+}
+
+/*font style, weight, and size for slider question*/ 
+.td1 {
+    text-align: left; 
+    font-family: "optima"; 
+    font-weight: normal; 
+}
+
+/*table header cell*/ 
+th {
+    text-align: center; 
+    font-family:'Times New Roman', Times, serif; 
+}
+
+/*font style, weight, and size for footer*/ 
+footer {
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    background-color:rgba(223, 121, 32, 0.888); 
+    height: 2.0rem; 
+}
+
+/*footer styling*/ 
+#footer {
+    text-align: center; 
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-weight: normal; 
+    margin-right: 10px; 
+}
+
+/*label styling*/ 
+label {
+    text-align: center; 
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-weight: normal; 
+}
+
+/*input field styling*/ 
+input {
+    text-align: left; 
+    font-family: 'Times New Roman', Times, serif; 
+    font-weight: normal; 
+}
+
+/*enhanced input fields - css for addition 4*/ 
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="date"], 
+select, 
+textarea{
+    border: 2px solid #ddd; 
+    border-radius: 8px; 
+    padding: 8px 12px; 
+    transition: all 0.3s ease; 
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="password"]:focus, 
+input[type="date"]:focus, 
+select:focus, 
+textarea:focus{
+    border-color: #4caf50; 
+    outline: none; 
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); 
+    transform: scale(1.02); 
+}
+
+/* Custom Radio Buttons */
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    margin-right: 5px;
+}
+
+input[type="radio"]:hover {
+    border-color: #4CAF50;
+    transform: scale(1.1);
+}
+
+input[type="radio"]:checked {
+    border-color: #4CAF50;
+    background: #4CAF50;
+    animation: radioCheck 0.3s ease;
+}
+
+input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+@keyframes radioCheck {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Toggle Switch for Checkboxes */
+.toggle-container {
+    display: inline-block;
+    margin: 5px 10px 5px 0;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.toggle-slider:hover {
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+/* Enhanced Range Slider - used stack for this */
+input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ff4444, #ffaa00, #4CAF50);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="range"]:hover {
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #4CAF50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #4CAF50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+ 
+#range-slider {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.888);
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Caps Lock Warning styling. took a while to get the blink right*/
+.caps-warning {
+    display: none;
+    color: #ff9800;
+    font-size: 12px;
+    margin-top: 5px;
+    animation: blink 1s infinite;
+}
+
+.caps-warning.show {
+    display: block;
+}
+
+/*perused stackoverflow to ensure i was doing keyframes right..*/ 
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.5; }
+}
+
+/* Error Animation */
+.error-shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.error-pulse {
+    animation: pulse 0.5s;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Collapsible Help Section */
+.help-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.help-header {
+    background: rgba(223, 121, 32, 0.888);
+    padding: 12px 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.help-header:hover {
+    background: rgba(223, 121, 32, 1);
+}
+
+.help-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+}
+
+.help-toggle {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.help-toggle.open {
+    transform: rotate(180deg);
+}
+
+.help-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    text-align: center; 
+}
+
+.help-content.open {
+    max-height: 500px;
+    padding: 15px;
+}
+
+.help-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.help-content li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/*text area styling*/ 
+textarea {
+    text-align: left; 
+    font-family: 'Times New Roman', Times, serif; 
+    font-weight: normal; 
+}
+
+/* styling for today's date section*/ 
+#today {
+    text-align: left; 
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal; 
+    margin-right: 5px; 
+}
+
+/*paragraph styling*/ 
+p {
+    text-align: right; 
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+}
+
+/*styling for error messages*/ 
+.error {
+    color: rgb(255, 255, 255); 
+    font-size:12px; 
+    font-family: 'Times New Roman', times, serif; 
+    font-weight: bold; 
+}
+
+.pword-message {
+    text-align: right; 
+    font-family: 'Times New Roman', Times, serif; 
+    font-weight: normal; 
+    background: transparent; 
+    padding: 10px; 
+    border-spacing: 2px; 
+    border-radius: 20px; 
+    color: rgb(255, 255, 255) ; 
+}
+
+/*output table styling*/ 
+table.output, 
+tr.output, 
+td.output{
+    width: 500px; 
+    background-color: rgba(138, 149, 235, 0.708);
+    padding: 10px; 
+    border-spacing: 2px; 
+    border-radius: 20px; 
+    color: rgba(0, 0, 0, 0.888); 
+}
+
+td.outputdata{
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 10px;
+    border-spacing: 2px; 
+    border-radius: 20px; 
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.form-wrapper {
+    width: 70%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+#submit {
+    display: none;
+}
+
+.site-footer {
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    background-color: rgba(223, 121, 32, 0.888); 
+    padding: 10px 0; 
+    text-align: center; 
+    z-index: 999; 
+}
+.site-footer p {
+    margin: 5px 0; 
+    text-align: center; 
+    color: rgba(0, 0, 0, 0.888); 
+}
+
+.modal{
+    display: none; 
+    position: fixed; 
+    z-index: 10000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content{
+    background-color: white; 
+    margin: 10% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 60%; 
+    max-width: 700px; 
+}
+
+.modal-header h2{
+    text-align: center; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.modal-body{
+    padding: 20px; 
+    max-height: 400px; 
+    overflow-y: auto; 
+}
+
+.modal-footer{
+    text-align: center;
+    padding: 10px; 
+}
+
+.modal-footer button{
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-size: 1rem; 
+    padding: 10px 20px; 
+    margin: 5px; 
+    cursor: pointer; 
+}
+
+#modal-submit-btn:disabled{
+    background-color: #cccccc; 
+    cursor: not-allowed; 
+}
