@@ -1,5 +1,5 @@
 /*
-Name: Julian Rodriguez
+Name: JR Extra Credit js
 Data created: September 24, 2025
 Date modified: December 10th, 2025
 Version: 5
@@ -702,4 +702,5 @@ function setupAutoSave() {
         const event = (field.type === "radio" || field.type === "checkbox" || field.tagName === "SELECT") ? "change" : "blur";
         field.addEventListener(event, () => saveToLocalStorage(field.id || field.name));
     });
+
 }
