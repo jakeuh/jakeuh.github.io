@@ -1,5 +1,5 @@
 /*
-    Name: Julian Rodriguez's patient intake form style file
+    Name: JR's patient intake form style file
     Date created: September 22, 2025
     Date modified: December 10th, 2025
     Version: 5
@@ -619,4 +619,5 @@ td.outputdata{
 #modal-submit-btn:disabled{
     background-color: #cccccc; 
     cursor: not-allowed; 
+
 }
