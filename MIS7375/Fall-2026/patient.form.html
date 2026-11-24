@@ -1,0 +1,220 @@
+ <!--
+Program name: patient.form.html
+Author: Enrique Delgado
+Date Created: 9/27/26
+Version: 1.0
+Description: Patient Registration Form for whenever a patient visits the clinic.
+-->
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Patient Registration Form</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="patientform.css">
+
+    </head>
+
+    <body>
+<div id="banner">  
+    <img src="./trident.png" alt="Trident Medical Logo">
+
+    <div id="banner-text">
+        <h1>Trident Medical Services, Inc</h1>
+
+        <div id="banner-info">
+            <div class="left-info">
+                <p>10100 Houston Avenue</p>
+                <p>Houston, Texas 77048</p>
+                <p>patient@tridmedicalservices.com</p>
+            </div>
+
+            <div class="right-info">
+                <p>
+                    <script>
+                        const today = new Date();
+                        document.write(today.toDateString());
+                    </script>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<form action="#" method="post">
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" name="firstName" maxlength="30" required></td>
+        </tr> 
+        <tr>
+            <td>Middle Initial:</td>
+            <td><input type="text" name="middleInitial" maxlength="1"></td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" name="lastName" maxlength="30" required></td>
+        </tr>
+        <tr>
+            <td>Date of Birth:</td>
+            <td><input type="date" name="dob" required></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td><select name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Social Security Number:</td>
+            <td><input type="password" name="ssn" maxlength="11" required></td>
+        </tr>
+        <tr>
+            <td>Address Line 1:</td>
+            <td><input type="text" name="address1" maxlength="30" required></td>
+        </tr>
+        <tr>
+            <td>Address Line 2:</td>
+            <td><input type="text" name="address2" maxlength="30"></td>
+        </tr>
+         <tr>
+            <td>City:</td>
+            <td><input type="text" name="city" maxlength="30" required></td>
+        </tr>
+         <tr>
+            <td>State:</td>
+            <td><select name="state" required>
+                <option value="">-- Select State --</option>
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AZ">AZ</option>
+    <           option value="AR">AR</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="IA">IA</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="ME">ME</option>
+                <option value="MD">MD</option>
+                <option value="MA">MA</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MS">MS</option>
+                <option value="MO">MO</option>
+                <option value="MT">MT</option>
+                <option value="NE">NE</option>
+                <option value="NV">NV</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>
+                <option value="NY">NY</option>
+                <option value="NC">NC</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="VA">VA</option>
+                <option value="WA">WA</option>
+                <option value="WV">WV</option>
+                <option value="WI">WI</option>
+                <option value="WY">WY</option>
+</select></td>
+        </tr>
+        <tr>
+            <td>Zip Code:</td>
+            <td><input type="text" name="zip" maxlength="5" required></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="email" maxlength="50" required></td>
+        </tr>
+        <tr>
+            <td>User ID:</td>
+            <td><input type="text" name="userID" maxlength="30" required></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" maxlength="30" required></td>
+        </tr>
+        <tr>
+            <td>Confirm Password:</td>
+            <td><input type="password" name="confirmPassword" maxlength="30" required></td>
+        </tr>
+         <tr>
+            <td>Symptoms:</td>
+            <td><textarea name="symptoms" rows="3" cols="50"></textarea></td>
+        </tr>
+        <tr>
+            <td>Medical History:</td>
+            <td>
+                <input type="checkbox" name="diabetes"> Diabetes<br>
+                <input type="checkbox" name="bp"> High Blood Pressure<br>
+                <input type="checkbox" name="cholesterol"> High Cholesterol<br>
+                <input type="checkbox" name="chf"> Congestive Heart Failure<br>
+                <input type="checkbox" name="seizure"> Seizure Disorder<br>
+                <input type="checkbox" name="depression"> Depression
+            </td>
+        </tr>
+        <tr>
+            <td> How Healthy are you today? (1-10):</td>
+            <td><input type="range" min="1" max="10" name="health" id="healthSlider">
+            <span id="healthValue">5</span>
+            <script>
+                const slider =document.getElementById("healthSlider")
+                const output = document.getElementById("healthValue")
+                output.textContent=slider.value
+                slider.oninput = function(){output.textContent = this.value;}
+            </script>
+            </td>
+        </tr>
+        <tr>
+            <td>Do you have insurance?</td>
+            <td>
+                <input type="radio" name="insurance" value="yes">Yes
+                <input type="radio" name="insurance" value="no">No
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="button-row">
+                <input type="reset" value="Clear Form">
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+
+    </table>
+</form>
+<hr>   
+<div id="footer">
+    <button type="button">Contact Us</button>
+    <p>Trident Medical Services</p>
+    <p>10100 Houston Avenue, Houston, Texas 77048</p>
+    <p>patient@trimedicalservices.com</p>
+</div>
+        <!-- Load external JavaScript -->
+        <script src="patient.form.js"></script>
+        
+    </body>
+
+</html>

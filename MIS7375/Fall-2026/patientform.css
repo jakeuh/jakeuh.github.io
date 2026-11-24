@@ -1,0 +1,141 @@
+/* Place your CSS styles in this file */
+  <!--
+Program name: patientform.css
+Author: Enrique Delgado
+Date Created: 9/27/26
+Version: 1.0
+Description: Patient Registration Form for whenever a patient visits the clinic.
+-->
+
+#banner {
+    background-color: #e6f2ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid #004c99;
+}
+
+
+#banner img {
+    width: 150px;
+    height: auto;
+    margin-right: 25px;
+}
+
+#banner-text h1 {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0;
+    color: #00264d;
+    letter-spacing: 1px;
+}
+
+#banner-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 40px; /* spacing between left and right columns */
+}
+
+
+.left-info {
+    text-align: left;
+}
+
+
+.right-info {
+    text-align: right;
+}
+
+
+#banner-text p {
+    margin: 3px 0;
+    font-size: 15px;
+}
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+td{
+    padding: 3px;
+    vertical-align: middle;
+    border: 1px solid #cccccc;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+textarea,
+select{
+    width:95%;
+    padding:8px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 14px;
+
+}
+input[type="range"]{
+    width:80%;
+}
+
+#healthValue {
+    font-weight: bold;
+    margin-left: 10px;
+}
+.button-row{
+    text-align: center;
+    padding: 20px;
+}
+
+input[type="submit"] {
+    background-color: #03db72;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+input[type="reset"] {
+    background-color: #f41335;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+#footer {
+    background-color: #e6f2ff;
+    border-top: 2px solid #004c99;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#footer button{
+    background-color: #004c99;
+    display: block;
+    color: white; 
+    margin: 0 auto 15px auto;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-button: 15px;
+}
+
+#footer p{
+    text-align: left;
+    font-size: 8px
+}
+
+body{
+    background-color: #bebbbb;
+}
