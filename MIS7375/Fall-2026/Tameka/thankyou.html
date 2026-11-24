@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+  Program Name: index.html
+  Author: Tameka Boston
+  Date Created: 2026-10-22
+  Date Last Edited: 2026-10-22
+  Version: 1.0
+  Description: Homework2 - Thank you page
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Thank You!</title>
+    <!-- Load CSS style -->
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- The banner with logo, company, and date together -->
+    <div id="header">
+      <table width="100%">
+        <tr>
+          <td><img src="logo.png" alt="logo" width="80" height="80"></td>
+          <td><h1>Sugarland Medical</h1></td>
+          <td class="today">Today is: <span id="today"></span></td>
+        </tr>
+      </table>
+      <!-- In-line JavaScript for the day and date -->
+      <script>
+        var d = new Date(), n = d.getDate();
+        var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var mons = ["Jan","Feb","March","April","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+        var s = (n%10==1 && n!=11) ? "st" : (n%10==2 && n!=12) ? "nd" : (n%10==3 && n!=13) ? "rd" : "th";
+        document.getElementById("today").innerHTML = days[d.getDay()] + ", " + mons[d.getMonth()] + " " + n + s + ", " + d.getFullYear();
+      </script>
+    </div>
+
+    <!--Thank you message -->
+    <div id="main">
+      <p>Thank you for your submission.</p>
+    </div>
+
+    <!-- footer -->
+    <div id="footer">
+      <table width="100%">
+        <tr>
+          <td>Sugarland Medical<br>PO BOX 12345<br>Sugar Land TX 77496</td>
+          <td><a class="btn" href="mailto:contact@sugarlandmedical.com">CONTACT US</a></td>
+          <td><a href="https://www.facebook.com/">Facebook</a> | <a href="https://twitter.com/">Twitter</a></td>
+        </tr>
+      </table>
+    </div>
+    <!-- The end of te thankyou.html -->
+  </body>
+</html>

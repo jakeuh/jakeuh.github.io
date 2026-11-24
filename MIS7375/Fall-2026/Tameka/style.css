@@ -1,0 +1,33 @@
+/*
+  Program Name: index.html
+  Author: Tameka Boston
+  Date Created: 2026-10-22
+  Date Last Edited: 2026-10-22
+  Version: 1.0
+  Description: Homework2 - style.css
+*/
+
+/* tag selectors */
+body { background-color: #eef6f6; color: #1f3a3a; font-family: Verdana, sans-serif; }
+h1, h2 { font-family: Georgia, serif; color: #0b6e6e; }
+td { padding: 4px 8px; }
+
+/* id selectors */
+#header { background-color: #0b6e6e; padding: 10px 30px; }
+#header h1 { color: #ffffff; margin: 0; }
+#main { padding: 10px 30px; }
+#footer { background-color: #1f3a3a; color: #eef6f6; padding: 10px 30px; }
+
+/* class selectors */
+.label { text-align: right; font-weight: bold; color: #0b6e6e; }
+.today { text-align: right; color: #ffe8cf; }
+.btn { background-color: #f4a261; color: #1f3a3a; padding: 6px 16px; text-decoration: none; }
+
+/* name selector */
+input[name="ssn"] { background-color: #fff8e7; }
+
+/* hyperlinks and visited hyperlinks */
+a:link { color: #0b6e6e; }
+a:visited { color: #6a4c93; }
+#footer a:link, #footer a:visited { color: #ffd6a5; }
+#footer a.btn:link, #footer a.btn:visited { color: #1f3a3a; }
